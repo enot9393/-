@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антон & Варвара | Свадьба 8 августа 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(255,182,193,0.8), rgba(255,182,193,0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffeb3b"/><stop offset="100%" stop-color="%23ffc107"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/><path d="M500 0Q600 100 700 0T900 0Q950 50 900 100Q850 150 800 100T600 100Q550 150 500 100T400 100Q350 150 300 100T100 100Q50 150 100 200Q150 250 200 200T300 200Q350 250 400 200T500 200Q550 250 600 200T700 200Q750 250 800 200T900 200Q950 250 900 300Q850 350 800 300T700 300Q650 350 600 300T500 300Q450 350 400 300T300 300Q250 350 200 300T100 300Q50 350 100 400Q150 450 200 400T300 400Q350 450 400 400T500 400Q550 450 600 400T700 400Q750 450 800 400T900 400Q950 450 900 500Q850 550 800 500T700 500Q650 550 600 500T500 500Q450 550 400 500T300 500Q250 550 200 500T100 500Q50 550 100 600Q150 650 200 600T300 600Q350 650 400 600T500 600Q550 650 600 600T700 600Q750 650 800 600T900 600Q950 650 900 700Q850 750 800 700T700 700Q650 750 600 700T500 700Q450 750 400 700T300 700Q250 750 200 700T100 700Q50 750 100 800Q150 850 200 800T300 800Q350 850 400 800T500 800Q550 850 600 800T700 800Q750 850 800 800T900 800Q950 850 900 900Q850 950 800 900T700 900Q650 950 600 900T500 900Q450 950 400 900T300 900Q250 950 200 900T100 900Q50 950 100 1000Q150 1050 200 1000T300 1000Q350 1050 400 1000T500 1000Q550 1050 600 1000T700 1000Q750 1050 800 1000T900 1000Q950 1050 900 0V0H1000V1000H0V0Z" fill="%23ffe082" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="0.8" fill="white" opacity="0.08"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero p {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .countdown {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .countdown div {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem 1rem;
+            min-width: 100px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .countdown span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .countdown p {
+            font-size: 0.9rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #d4a574;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #d4a574, #ffb6a7);
+            border-radius: 2px;
+        }
+        
+        .couple {
+            text-align: center;
+            background: linear-gradient(135deg, #f9f7f4 0%, #fffaf5 100%);
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 20px 60px rgba(212,165,116,0.1);
+        }
+        
+        .couple img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 1rem 2rem;
+            border: 8px solid rgba(212,165,116,0.3);
+        }
+        
+        .couple-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .person {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .person h3 {
+            font-size: 1.8rem;
+            color: #d4a574;
+            margin-bottom: 1rem;
+        }
+        
+        .schedule {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #f0e8d9;
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .time {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #d4a574;
+        }
+        
+        .rsvp {
+            text-align: center;
+            background: linear-gradient(135deg, #fffaf5 0%, #f8f4f0 100%);
+            border-radius: 25px;
+            padding: 4rem 2rem;
+            box-shadow: 0 20px 60px rgba(212,165,116,0.15);
+        }
+        
+        .rsvp form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #f0e8d9;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4a574;
+            box-shadow: 0 0 0 3px rgba(212,165,116,0.1);
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #d4a574 0%, #ffb6a7 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(212,165,116,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .countdown {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .couple-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 20px;
+            animation: float 6s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts"></div>
+    
+    <section class="hero">
+        <h1>Антон & Варвара</h1>
+        <p>Приглашаем вас на нашу свадьбу!</p>
+        <div class="countdown" id="countdown"></div>
+    </section>
+    
+    <section class="couple" id="couple">
+        <h2 class="section-title">Наши сердца бьются в унисон</h2>
+        <div class="couple-info">
+            <div class="person">
+		<img src="img/photo.jpg">
+                <h3>Антон Антипин</h3>
+                <p>Жених с большим сердцем</p>
+            </div>
+            <div style="font-size: 3rem; color: #d4a574;">&</div>
+            <div class="person">
+                <img src="img/photo2.jpg">
+                <h3>Варвара Разуваева</h3>
+                <p>Невеста мечты</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="schedule" id="schedule">
+        <h2 class="section-title">Программа торжества</h2>
+        <div class="schedule-item">
+            <span class="time">11:00</span>
+            <div>
+                <strong>Регистрация заключения брака</strong><br>
+                ЗАГС, ул. Юргановская, 66
+            </div>
+        </div>
+        <div class="schedule-item">
+            <span class="time">09.08 <br>
+			12:00</span>
+            <div>
+                <strong>Венчание</strong><br>
+                д. Ванькова, <br> храм РДЦ Николы Чудотворца
+            </div>
+        </div>
+        <div class="schedule-item">
+            <span class="time">17:00</span>
+            <div>
+                <strong>Банкет</strong><br>
+                Керос
+            </div>
+        </div>
+    </section>
+    
+    <section class="rsvp" id="rsvp">
+        <h2 class="section-title">Подтвердите присутствие</h2>
+        <form id="rsvpForm">
+            <div class="form-group">
+                <label>Ваше имя *</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Количество гостей</label>
+                <select name="guests">
+                    <option value="1">1 человек</option>
+                    <option value="2">2 человека</option>
+                    <option value="3">3 человека</option>
+                    <option value="4+">4+ человека</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Присутствуете?</label>
+                <select name="attendance" required>
+                    <option value="">Выберите</option>
+                    <option value="yes">Да, приду! 💕</option>
+                    <option value="no">К сожалению, не смогу</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Особые пожелания</label>
+                <textarea name="wishes" rows="4" placeholder="Аллергия, диета, просьбы..."></textarea>
+            </div>
+            <button type="submit" class="btn">Отправить </button>
+        </form>
+    </section>
+    
+    <script>
+        // Обратный отсчет
+        function updateCountdown() {
+            const weddingDate = new Date('2026-08-15T11:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = `
+                <div><span>${days}</span><p>дней</p></div>
+                <div><span>${hours}</span><p>часов</p></div>
+                <div><span>${minutes}</span><p>минут</p></div>
+                <div><span>${seconds}</span><p>секунд</p></div>
+            `;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Анимированные сердца
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💕';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+        
+        setInterval(createHeart, 300);
+        
+        // Форма RSVP
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Здесь можно добавить отправку на сервер
+             emailjs.init('QRW-3hww7oBA916FT');
+             emailjs.send('service_ldwoq5q', 'template_ndnr767', data) // ← Ваши ID
+             .then(function(response) {
+            alert('Спасибо за ответ! Мы получили ваше подтверждение. 💕');
+            this.reset();
+            }, function(error) {
+                alert('❌ Ошибка отправки. Попробуйте еще раз.');
+                console.log('FAILED...', error);
+            });
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
