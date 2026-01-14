@@ -414,23 +414,22 @@
         setInterval(createHeart, 300);
         
         // Форма RSVP
-        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Здесь можно добавить отправку на сервер
-             emailjs.init('QRW-3hww7oBA916FT');
-             emailjs.send('service_ldwoq5q', 'template_ndnr767', data) // ← Ваши ID
-             .then(function(response) {
-            alert('Спасибо за ответ! Мы получили ваше подтверждение. 💕');
-            this.reset();
-            }, function(error) {
-                alert('❌ Ошибка отправки. Попробуйте еще раз.');
-                console.log('FAILED...', error);
-            });
-        });
-        
+      emailjs.init('QRW-3hww7oBA916FT');
+
+document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    try {
+        const response = await emailjs.send('service_ldwoq5q', 'template_ndnr767', data);
+        alert('Спасибо за ответ! Мы получили ваше подтверждение. 💕');
+        this.reset(); // Теперь this = форма
+    } catch (error) {
+        alert('❌ Ошибка отправки. Попробуйте еще раз.');
+        console.log('FAILED...', error);
+    }
+});
         // Плавная прокрутка
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -443,3 +442,4 @@
     </script>
 </body>
 </html>
+
