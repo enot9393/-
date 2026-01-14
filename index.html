@@ -414,22 +414,27 @@
         setInterval(createHeart, 300);
         
         // Форма RSVP
-      emailjs.init('QRW-3hww7oBA916FT');
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+<script>
+emailjs.init('QRW-3hww7oBA916FT'); // ДО обработчика!
+
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
     const data = Object.fromEntries(formData);
     
-    try {
-        const response = await emailjs.send('service_ldwoq5q', 'template_ndnr767', data);
-        alert('Спасибо за ответ! Мы получили ваше подтверждение. 💕');
-        this.reset(); // Теперь this = форма
-    } catch (error) {
-        alert('❌ Ошибка отправки. Попробуйте еще раз.');
-        console.log('FAILED...', error);
-    }
+    emailjs.send('service_ldwoq5q', 'template_ndnr767', data)
+        .then(function() {
+            alert('✅ Спасибо! Ответ получен!');
+            document.getElementById('rsvpForm').reset(); // Явно указываем форму
+        })
+        .catch(function(error) {
+            alert('❌ Ошибка. Проверьте консоль (F12)');
+            console.error('EmailJS error:', error);
+        });
 });
+</script>
         // Плавная прокрутка
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -442,4 +447,5 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(e)
     </script>
 </body>
 </html>
+
 
